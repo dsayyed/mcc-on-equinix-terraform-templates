@@ -24,7 +24,7 @@
     append: true
 
 - name: Deploy SSH Public Key
-  ansible.posix.authorized_key:
+  authorized_key:
     user: "{{ seed_username }}"
     state: present
     key: "{{ lookup('file', '{{ ansible_ssh_public_key_file }}') }}"
